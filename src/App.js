@@ -36,7 +36,7 @@ function UploadFiles() {
       (item) => checkedItems[item]
     );
     console.log('Selected items:', selectedItems);
-    // Add your submission logic here (e.g., save or send the selected items)
+    // submission logic here (e.g., save or send the selected items)
   };
 
   return (
