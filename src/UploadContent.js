@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { Link } from 'react-router-dom';
 import DisplayContent from './DisplayContent';
 import Home from './Home';
 
@@ -85,7 +83,7 @@ function UploadContent() {
     <div className="App">
       <header className="App-body">
         <div>
-          <p> upload assignments, notes, past exams, etc. </p>
+          <p style = {{paddingTop: '100px'}}> upload assignments, notes, past exams, etc. </p>
           <UploadFiles/>
         </div>
       </header>
