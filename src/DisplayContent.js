@@ -24,7 +24,9 @@ function DisplayContent() {
           <p> previously generated content: </p>
           {/* <PDFView pdfUrl={pdfUrl} /> */}
           <PDFView pdfUrl={"/testPDFs/testPDF1.pdf"} />
+          <div style = {{padding: '20px'}}></div>
           <PDFView pdfUrl={"/testPDFs/testPDF2.pdf"} />
+          <div style = {{padding: '20px'}}></div>
           <PDFView pdfUrl={"/testPDFs/testPDF3.pdf"} />
         </div>
       </header>
