@@ -1,9 +1,39 @@
 import './App.css';
 import { Link } from 'react-router-dom';
-import UploadContent from './UploadContent';
-import DisplayContent from './DisplayContent';
+// import UploadContent from './UploadContent';
+// import DisplayContent from './DisplayContent';
+import React, { useEffect } from 'react';
 
 function Home() {
+  
+  async function handleGenerateResponse() {
+    const systemMessage = "Give me 1 paragraph.";
+    const userMessage = "How do I use Gauss-Newton Algorithm to find the Conditional LS estimate?";
+    const response = await fetchOllamaResponse(systemMessage, userMessage);
+    console.log("Generated Response:", response);
+  }
+
+  async function fetchOllamaResponse(systemMessage, userMessage) {
+    const response = await fetch("http://127.0.0.1:8000/api/generate-response", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            system_message: systemMessage,
+            user_message: userMessage,
+            model: "llama3.2"
+        })
+    });
+    const data = await response.json();
+    console.log(data.response);
+    return data.response;
+  }
+
+  useEffect(() => {
+    handleGenerateResponse();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-body">
