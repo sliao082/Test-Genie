@@ -1,9 +1,20 @@
-# main.py
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from app.services.ollama_service import get_response_from_ollama
+from api.uplaod import router as upload_router
+from services.ollama_service import get_response_from_ollama
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(upload_router, prefix="/api/upload", tags=["upload"])
 
 class MessageRequest(BaseModel):
     system_message: str
