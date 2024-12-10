@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import DisplayContent from './DisplayContent';
-import Home from './Home';
+// import PracticeTest from './PracticeTest';
+// import Home from './Home';
+import { Link } from 'react-router-dom';
 
 
 function UploadFiles() {
@@ -15,18 +16,18 @@ function UploadFiles() {
       alert('Please select a PDF file.');
     }
   };
-  const [checkedItems, setCheckedItems] = useState({
-    item1: false,
-    item2: false,
-  });
+  // const [checkedItems, setCheckedItems] = useState({
+  //   item1: false,
+  //   item2: false,
+  // });
   // Handle change for each checkbox
-  const handleCheckboxChange = (event) => {
-    const { name, checked } = event.target;
-    setCheckedItems({
-      ...checkedItems,
-      [name]: checked,
-    });
-  };
+  // const handleCheckboxChange = (event) => {
+  //   const { name, checked } = event.target;
+  //   setCheckedItems({
+  //     ...checkedItems,
+  //     [name]: checked,
+  //   });
+  // };
   const handleSubmit = () => {
     if (selectedFile) {
       // Handle upload logic here
@@ -34,10 +35,10 @@ function UploadFiles() {
     } else {
       alert('No file selected.');
     }
-    const selectedItems = Object.keys(checkedItems).filter(
-      (item) => checkedItems[item]
-    );
-    console.log('Selected items:', selectedItems);
+    // const selectedItems = Object.keys(checkedItems).filter(
+    //   (item) => checkedItems[item]
+    // );
+    // console.log('Selected items:', selectedItems);
     // submission logic here (e.g., save or send the selected items)
   };
 
@@ -52,7 +53,7 @@ function UploadFiles() {
       </div>
       {/* <button onClick={handleUpload}>Upload PDF</button> */}
       <div style = {{padding: '20px'}}></div>
-      <div style={{alignItems: 'left'}}>
+      {/* <div style={{alignItems: 'left'}}>
         <label style={{fontSize: '20px'}}>
           <input
             type="checkbox"
@@ -71,9 +72,15 @@ function UploadFiles() {
           />
           notes summary
         </label>
-      </div>
-      <div style = {{padding: '20px'}}></div>
-      <button className="custom-button" onClick={handleSubmit}> Generate! </button>
+      </div> */}
+      <label style = {{padding: '20px'}}></label>
+      <Link to="/PracticeTest"> 
+        <button className="custom-button" onClick={handleSubmit}> generate practice test </button>
+      </Link>
+      <label style = {{padding: '20px'}}></label>
+      <Link to="/NotesSummary"> 
+        <button className="custom-button" onClick={handleSubmit}> generate notes summary </button>
+      </Link>
     </div>
   );
 }

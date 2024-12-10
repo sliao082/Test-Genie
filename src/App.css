@@ -56,6 +56,16 @@
   font-size: 20px;
 }
 
+.big-button {
+  background-color: #3d6d9e;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+}
+
 .custom-button:hover {
   background-color: #124274;
 }
