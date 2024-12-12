@@ -1,0 +1,71 @@
+.App {
+  font-family: 'Verdana', 'Geneva', sans-serif;
+  text-align: center;
+}
+
+.App-logo {
+  height: 8vmin;
+  align-items: center;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #3d6d9e;
+  min-height: 11vh;
+  max-height: 11vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 0;
+}
+
+.App-body {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-top: 5vh;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.custom-button {
+  background-color: #3d6d9e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.big-button {
+  background-color: #3d6d9e;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.custom-button:hover {
+  background-color: #124274;
+}
